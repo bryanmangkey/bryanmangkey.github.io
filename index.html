@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bryan C. Mangkey — Head of Section, Data Analyst</title>
+<meta name="description" content="Portofolio Bryan C. Mangkey — Data Analyst & pengembang sistem operasional pertambangan (web + mobile).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-950:#0b1420;
+    --navy-900:#0f1b2d;
+    --navy-800:#16263b;
+    --navy-700:#20344d;
+    --gold:#c9a227;
+    --gold-soft:#e0c257;
+    --teal:#3b8f95;
+    --cream:#f4f0e6;
+    --cream-2:#eae3d2;
+    --ink:#141c26;
+    --ink-soft:#4a5568;
+    --line:#d8d0bb;
+    --radius:2px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    font-size:16px;
+    line-height:1.6;
+  }
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  .wrap{max-width:1100px; margin:0 auto; padding:0 28px;}
+
+  /* ---------- Nav ---------- */
+  header.nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(244,240,230,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:1100px; margin:0 auto; padding:16px 28px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .brand{
+    font-family:'Fraunces',serif; font-weight:600; font-size:1.05rem;
+    letter-spacing:0.01em;
+  }
+  .brand span{color:var(--gold);}
+  nav.links{display:flex; gap:28px; font-size:0.85rem;}
+  nav.links a{
+    text-decoration:none; color:var(--ink-soft); font-weight:500;
+    text-transform:uppercase; letter-spacing:0.08em; font-size:0.72rem;
+    border-bottom:1px solid transparent; padding-bottom:3px;
+    transition:color .2s, border-color .2s;
+  }
+  nav.links a:hover, nav.links a:focus-visible{color:var(--ink); border-color:var(--gold);}
+  @media (max-width:720px){ nav.links{display:none;} }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:
+      radial-gradient(1100px 500px at 85% -10%, rgba(201,162,39,0.18), transparent 60%),
+      var(--navy-900);
+    color:var(--cream);
+    position:relative;
+    overflow:hidden;
+    border-bottom:4px solid var(--gold);
+  }
+  .strata{
+    position:absolute; inset:0; opacity:0.5; pointer-events:none;
+  }
+  .strata div{
+    position:absolute; left:-5%; right:-5%; height:1px;
+    background:linear-gradient(90deg, transparent, rgba(201,162,39,0.35), transparent);
+  }
+  .hero-inner{
+    position:relative; z-index:2;
+    max-width:1100px; margin:0 auto; padding:88px 28px 64px;
+    display:grid; grid-template-columns:1fr 220px; gap:48px; align-items:center;
+  }
+  @media (max-width:760px){
+    .hero-inner{grid-template-columns:1fr; padding-top:56px; text-align:left;}
+    .hero-photo{order:-1; width:120px;}
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace; font-size:0.72rem; letter-spacing:0.14em;
+    text-transform:uppercase; color:var(--gold-soft); margin:0 0 18px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{content:""; width:26px; height:1px; background:var(--gold-soft); display:inline-block;}
+  h1.name{
+    font-family:'Fraunces',serif; font-weight:600; font-size:clamp(2.4rem,5vw,3.6rem);
+    line-height:1.05; margin:0 0 14px; letter-spacing:-0.01em;
+  }
+  .role{
+    font-size:1.05rem; color:var(--gold-soft); font-weight:500; margin:0 0 22px;
+  }
+  .lede{
+    max-width:52ch; color:#cfd6df; font-size:1rem; margin:0 0 30px;
+  }
+  .hero-meta{
+    display:flex; flex-wrap:wrap; gap:22px; font-size:0.85rem; color:#b9c2cd;
+  }
+  .hero-meta a{text-decoration:none; border-bottom:1px solid rgba(201,162,39,0.4); padding-bottom:2px;}
+  .hero-meta a:hover{color:var(--gold-soft); border-color:var(--gold-soft);}
+  .hero-photo{
+    width:190px; height:190px; border-radius:50%;
+    border:3px solid var(--gold);
+    padding:5px;
+    background:var(--navy-900);
+    justify-self:end;
+  }
+  .hero-photo img{border-radius:50%; width:100%; height:100%; object-fit:cover;}
+
+  /* stat strip */
+  .stats{
+    background:var(--navy-800);
+    border-top:1px solid var(--navy-700);
+  }
+  .stats-inner{
+    max-width:1100px; margin:0 auto; padding:22px 28px;
+    display:grid; grid-template-columns:repeat(4,1fr); gap:20px;
+  }
+  @media (max-width:720px){ .stats-inner{grid-template-columns:repeat(2,1fr);} }
+  .stat b{
+    display:block; font-family:'Fraunces',serif; font-size:1.7rem; color:var(--gold-soft); font-weight:600;
+  }
+  .stat span{font-size:0.72rem; color:#9aa7b4; text-transform:uppercase; letter-spacing:0.08em;}
+
+  /* ---------- Sections generic ---------- */
+  section{padding:76px 0;}
+  .section-head{margin-bottom:40px; max-width:60ch;}
+  .kicker{
+    font-family:'IBM Plex Mono',monospace; font-size:0.72rem; letter-spacing:0.14em;
+    text-transform:uppercase; color:var(--teal); margin:0 0 10px; font-weight:600;
+  }
+  h2{
+    font-family:'Fraunces',serif; font-weight:600; font-size:clamp(1.6rem,3vw,2.2rem);
+    margin:0 0 12px; letter-spacing:-0.01em; color:var(--navy-900);
+  }
+  .section-head p{color:var(--ink-soft); margin:0;}
+
+  /* ---------- About ---------- */
+  .about-grid{
+    display:grid; grid-template-columns:1.3fr 1fr; gap:48px; align-items:start;
+  }
+  @media (max-width:760px){ .about-grid{grid-template-columns:1fr;} }
+  .about-grid p{color:var(--ink-soft); margin:0 0 16px;}
+  .skill-block{margin-bottom:22px;}
+  .skill-block h4{
+    font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em;
+    color:var(--navy-800); margin:0 0 8px; font-family:'IBM Plex Mono',monospace;
+  }
+  .skill-block p{font-size:0.92rem; margin:0; color:var(--ink-soft);}
+  .tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:8px;}
+  .tag{
+    font-size:0.76rem; padding:5px 11px; border:1px solid var(--line);
+    color:var(--navy-800); background:#fff; font-family:'IBM Plex Mono',monospace;
+  }
+
+  /* ---------- Experience ---------- */
+  .timeline{border-left:2px solid var(--line); margin-left:6px;}
+  .tl-item{position:relative; padding:0 0 40px 32px;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before{
+    content:""; position:absolute; left:-7px; top:4px;
+    width:12px; height:12px; border-radius:50%;
+    background:var(--cream); border:2px solid var(--gold);
+  }
+  .tl-role{font-family:'Fraunces',serif; font-size:1.2rem; font-weight:600; margin:0 0 3px; color:var(--navy-900);}
+  .tl-org{font-size:0.88rem; color:var(--teal); font-weight:600; margin:0 0 10px;}
+  .tl-desc{color:var(--ink-soft); font-size:0.92rem; margin:0 0 12px; max-width:65ch;}
+  .tl-list{margin:0; padding-left:18px; color:var(--ink-soft); font-size:0.9rem;}
+  .tl-list li{margin-bottom:6px;}
+
+  /* ---------- Featured project ---------- */
+  .project{
+    background:var(--navy-900); color:var(--cream);
+    padding:60px 0; border-top:4px solid var(--gold); border-bottom:4px solid var(--gold);
+  }
+  .project .kicker{color:var(--gold-soft);}
+  .project h2{color:#fff;}
+  .project .section-head p{color:#b9c2cd;}
+  .pitch{
+    font-family:'Fraunces',serif; font-size:1.25rem; font-weight:500;
+    color:#e7e2d4; max-width:70ch; line-height:1.5; margin:0 0 40px;
+    border-left:3px solid var(--gold); padding-left:20px;
+  }
+
+  /* department switcher — signature element */
+  .switcher{
+    display:grid; grid-template-columns:220px 1fr; gap:0;
+    border:1px solid var(--navy-700); background:var(--navy-800);
+  }
+  @media (max-width:760px){ .switcher{grid-template-columns:1fr;} }
+  .dept-list{border-right:1px solid var(--navy-700); padding:8px;}
+  @media (max-width:760px){ .dept-list{display:flex; flex-wrap:wrap; border-right:none; border-bottom:1px solid var(--navy-700);} }
+  .dept-btn{
+    display:block; width:100%; text-align:left; background:none; border:none;
+    color:#aab5c0; font-family:'IBM Plex Mono',monospace; font-size:0.78rem;
+    padding:12px 14px; cursor:pointer; border-left:2px solid transparent;
+    transition:background .15s, color .15s, border-color .15s;
+  }
+  @media (max-width:760px){ .dept-btn{width:auto; border-left:none; border-bottom:2px solid transparent;} }
+  .dept-btn:hover, .dept-btn:focus-visible{background:var(--navy-700); color:#fff;}
+  .dept-btn[aria-selected="true"]{
+    background:var(--navy-700); color:var(--gold-soft); border-left-color:var(--gold);
+    font-weight:600;
+  }
+  .dept-panel{padding:30px 34px;}
+  .dept-panel h3{
+    font-family:'Fraunces',serif; font-size:1.3rem; margin:0 0 6px; color:#fff; font-weight:600;
+  }
+  .dept-panel .dept-note{color:#8fa0ac; font-size:0.82rem; margin:0 0 20px;}
+  .feat-grid{
+    display:grid; grid-template-columns:repeat(2,1fr); gap:8px 24px;
+    list-style:none; margin:0; padding:0;
+  }
+  @media (max-width:560px){ .feat-grid{grid-template-columns:1fr;} }
+  .feat-grid li{
+    font-size:0.87rem; color:#cfd6df; padding:7px 0 7px 18px; position:relative;
+    border-bottom:1px solid rgba(255,255,255,0.06);
+  }
+  .feat-grid li::before{
+    content:"›"; position:absolute; left:0; color:var(--gold); font-weight:700;
+  }
+
+  /* cross-cutting + mobile */
+  .cross{margin-top:52px;}
+  .cross h3{
+    font-family:'Fraunces',serif; color:#fff; font-size:1.15rem; margin:0 0 18px;
+  }
+  .cross-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
+  @media (max-width:760px){ .cross-grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width:520px){ .cross-grid{grid-template-columns:1fr;} }
+  .cross-card{
+    background:var(--navy-800); border:1px solid var(--navy-700); padding:16px 18px;
+  }
+  .cross-card b{display:block; color:var(--gold-soft); font-size:0.82rem; margin-bottom:6px; font-family:'IBM Plex Mono',monospace;}
+  .cross-card span{font-size:0.84rem; color:#b9c2cd;}
+
+  /* screenshots */
+  .shots{
+    margin-top:52px; display:grid; grid-template-columns:1fr 1.1fr; gap:36px; align-items:center;
+  }
+  @media (max-width:760px){ .shots{grid-template-columns:1fr;} }
+  .shots img{
+    border:1px solid var(--navy-700); box-shadow:0 20px 50px -20px rgba(0,0,0,0.6);
+  }
+  .shots-text h3{font-family:'Fraunces',serif; color:#fff; font-size:1.15rem; margin:0 0 12px;}
+  .shots-text p{color:#b9c2cd; font-size:0.92rem; margin:0 0 14px;}
+  .stack-row{display:flex; flex-wrap:wrap; gap:8px; margin-top:16px;}
+  .stack-tag{
+    font-size:0.74rem; font-family:'IBM Plex Mono',monospace; padding:5px 10px;
+    border:1px solid var(--navy-700); color:var(--gold-soft);
+  }
+
+  /* mobile feature table */
+  .mobile-table{margin-top:52px;}
+  table{width:100%; border-collapse:collapse; font-size:0.87rem;}
+  th, td{text-align:left; padding:12px 14px; border-bottom:1px solid var(--navy-700); vertical-align:top;}
+  th{
+    font-family:'IBM Plex Mono',monospace; font-size:0.7rem; text-transform:uppercase;
+    letter-spacing:0.08em; color:var(--gold-soft); font-weight:600;
+  }
+  td{color:#cfd6df;}
+  td:first-child{color:#fff; font-weight:600; white-space:nowrap;}
+
+  /* ---------- Contact / footer ---------- */
+  .contact{
+    background:var(--cream-2); border-top:1px solid var(--line); text-align:center;
+  }
+  .contact h2{margin-bottom:14px;}
+  .contact p{color:var(--ink-soft); max-width:50ch; margin:0 auto 28px;}
+  .contact-links{display:flex; gap:16px; justify-content:center; flex-wrap:wrap;}
+  .btn{
+    display:inline-block; padding:13px 26px; font-size:0.85rem; font-weight:600;
+    text-decoration:none; letter-spacing:0.02em; border:1px solid var(--navy-900);
+    transition:background .2s, color .2s;
+  }
+  .btn-primary{background:var(--navy-900); color:var(--cream);}
+  .btn-primary:hover, .btn-primary:focus-visible{background:var(--gold); border-color:var(--gold); color:var(--navy-950);}
+  .btn-ghost{background:transparent; color:var(--navy-900);}
+  .btn-ghost:hover, .btn-ghost:focus-visible{background:var(--navy-900); color:var(--cream);}
+
+  footer.site-footer{
+    padding:26px 0; text-align:center; font-size:0.76rem; color:#9aa1a8;
+    background:var(--navy-950);
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="brand">Bryan C. <span>Mangkey</span></div>
+    <nav class="links">
+      <a href="#about">Tentang</a>
+      <a href="#experience">Pengalaman</a>
+      <a href="#project">Proyek Utama</a>
+      <a href="#contact">Kontak</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="strata" aria-hidden="true">
+    <div style="top:18%;"></div>
+    <div style="top:42%;"></div>
+    <div style="top:68%;"></div>
+    <div style="top:88%;"></div>
+  </div>
+  <div class="hero-inner">
+    <div>
+      <p class="eyebrow">Data Analyst · Sistem Operasional</p>
+      <h1 class="name">Bryan C. Mangkey</h1>
+      <p class="role">Head of Section — Data Analyst</p>
+      <p class="lede">Profesional data management dengan pengalaman lebih dari 7 tahun mengelola, mengintegrasikan, dan menganalisis data lintas departemen — dari dashboard operasional hingga sistem informasi berbasis web &amp; mobile untuk industri pertambangan.</p>
+      <div class="hero-meta">
+        <a href="mailto:brianmangkey@manadokota.cloud">brianmangkey@manadokota.cloud</a>
+        <a href="tel:+6281215868072">0812 1586 8072</a>
+        <span>Kec. Tikala, Kota Manado</span>
+      </div>
+    </div>
+    <div class="hero-photo"><img src="photo.jpg" alt="Foto Bryan C. Mangkey"></div>
+  </div>
+
+  <div class="stats">
+    <div class="stats-inner">
+      <div class="stat"><b>7+</b><span>Tahun pengalaman</span></div>
+      <div class="stat"><b>7</b><span>Departemen terintegrasi</span></div>
+      <div class="stat"><b>2</b><span>Platform — web &amp; mobile</span></div>
+      <div class="stat"><b>Multi</b><span>Site &amp; role-based access</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Tentang</p>
+      <h2>Fokus pada data yang bisa dipakai mengambil keputusan</h2>
+    </div>
+    <div class="about-grid">
+      <div>
+        <p>Bertanggung jawab mengelola dan mengintegrasikan data lintas departemen (HRGA, Logistik, Plant, Engineering, HSE) untuk mendukung pengambilan keputusan berbasis data di lingkungan operasional pertambangan.</p>
+        <p>Terbiasa membangun sistem informasi internal, menjaga akurasi data operasional, serta menyusun strategi berbasis data untuk mendukung efisiensi dan pertumbuhan bisnis — mulai dari database operasional, laporan rekapitulasi produksi real-time, hingga infrastruktur jaringan dan pengawasan CCTV di area site.</p>
+      </div>
+      <div>
+        <div class="skill-block">
+          <h4>Data Analytics</h4>
+          <p>Advanced Excel &amp; Google Sheets, dashboard reporting, payroll management.</p>
+        </div>
+        <div class="skill-block">
+          <h4>Programming</h4>
+          <p>Pengembangan software (web &amp; aplikasi mobile), database management.</p>
+        </div>
+        <div class="skill-block">
+          <h4>IT Infrastructure</h4>
+          <p>Administrasi jaringan (Wi-Fi), CCTV surveillance system, IT support.</p>
+        </div>
+        <div class="skill-block">
+          <h4>Soft Skills</h4>
+          <div class="tags">
+            <span class="tag">Leadership &amp; Team Management</span>
+            <span class="tag">Critical Thinking</span>
+            <span class="tag">Negotiation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience" style="background:var(--cream-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Pengalaman Kerja</p>
+      <h2>Rekam jejak lintas sektor</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <h3 class="tl-role">Head of Section Data Analyst</h3>
+        <p class="tl-org">PT Karyainvestama Mining</p>
+        <p class="tl-desc">Mengelola dan mengintegrasikan data lintas departemen (HRGA, Logistik, Plant, Engineering, HSE) untuk mendukung pengambilan keputusan berbasis data di lingkungan operasional pertambangan.</p>
+        <ul class="tl-list">
+          <li>Mengembangkan sistem informasi internal berbasis web dan mobile (APK) untuk meningkatkan efisiensi administrasi perusahaan.</li>
+          <li>Mengelola database operasional lintas departemen — data karyawan, payroll, aset perusahaan, hingga logistik bahan bakar — secara terpusat.</li>
+          <li>Menyusun laporan rekapitulasi produksi harian hingga tahunan secara real-time, termasuk pemantauan biaya bulanan proyek.</li>
+          <li>Merancang dan mengelola infrastruktur jaringan internet (Wi-Fi) serta sistem pengawasan CCTV untuk kelancaran operasional area site.</li>
+          <li>Mengelola basis data izin tambang (mine permit) dan distribusi APD, serta menganalisis efisiensi performa unit melalui pemantauan idle time.</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <h3 class="tl-role">Fasilitator Kota</h3>
+        <p class="tl-org">Kominfo Kota Manado</p>
+        <p class="tl-desc">Membantu berbagai dinas di Kota Manado dalam pengelolaan data melalui satu aplikasi terpadu.</p>
+        <ul class="tl-list">
+          <li>Ketua tim kecamatan untuk pengelolaan data penduduk (Dinas Pencatatan Sipil).</li>
+          <li>Menginput dan mengelola data pajak berbasis online di setiap wilayah (Badan Pendapatan Daerah).</li>
+          <li>Menginput titik koordinat lampu jalan dalam bentuk aplikasi (Dinas Perumahan &amp; Kawasan Permukiman).</li>
+          <li>Mengelola rute pengangkutan sampah di setiap kecamatan secara berbasis online.</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <h3 class="tl-role">Management Aset</h3>
+        <p class="tl-org">Badan Keuangan dan Aset Daerah</p>
+        <p class="tl-desc">Pengelolaan data aset pemerintah daerah secara menyeluruh.</p>
+        <ul class="tl-list">
+          <li>Mencatat dan mengelola data aset pemerintah secara akurat, memastikan data selalu terbarui dan dapat diakses.</li>
+          <li>Menyusun laporan berkala serta melakukan inventarisasi rutin.</li>
+          <li>Mengidentifikasi dan mendokumentasikan aset baru maupun aset yang sudah tidak terpakai.</li>
+          <li>Menyusun rencana pemeliharaan serta pengawasan dan audit penggunaan aset.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="project" id="project">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Proyek Unggulan</p>
+      <h2>Integrated Mining Operations Platform</h2>
+      <p>Platform digital untuk operasi pertambangan multi-lokasi — web + mobile.</p>
+    </div>
+
+    <p class="pitch">Platform digital terintegrasi untuk operasi pertambangan multi-lokasi: satu pintu masuk web untuk seluruh departemen, plus aplikasi mobile untuk akses lapangan, approval, produksi, absensi, dan pengaturan sistem — dengan hak akses per role dan per site.</p>
+
+    <div class="switcher">
+      <div class="dept-list" role="tablist" aria-label="Pilih departemen" id="deptList"></div>
+      <div class="dept-panel" id="deptPanel"></div>
+    </div>
+
+    <div class="cross">
+      <h3>Fitur lintas departemen</h3>
+      <div class="cross-grid">
+        <div class="cross-card"><b>Satu kerangka menu</b><span>Sidebar dan kontrol menu departemen selaras, hak akses konsisten.</span></div>
+        <div class="cross-card"><b>Alur pengadaan &amp; anggaran</b><span>MRS, PR, RAB, dan review antar fungsi — terutama logistik &amp; teknis.</span></div>
+        <div class="cross-card"><b>People operations</b><span>Roster kerja, absensi, cuti multi-level approval, monitoring kontrak, coaching.</span></div>
+        <div class="cross-card"><b>K3 &amp; medis</b><span>KPI safety, permit tambang, rantai stok medic, kesehatan karyawan.</span></div>
+        <div class="cross-card"><b>Operasi lapangan</b><span>Produksi harian, retase, HM, fuel, spare part, idle unit.</span></div>
+        <div class="cross-card"><b>Insight manajerial</b><span>Forecast, MTD, waterfall analysis, dashboard produksi.</span></div>
+      </div>
+    </div>
+
+    <div class="shots">
+      <img src="portfolio-dashboards.jpg" alt="Cuplikan dashboard produksi dan operasional">
+      <div class="shots-text">
+        <h3>Dashboard operasional real-time</h3>
+        <p>Cuplikan dashboard yang menampilkan ringkasan produksi, efisiensi unit, dan indikator operasional lintas site — dirancang agar manajemen bisa mengambil keputusan cepat tanpa menunggu laporan manual.</p>
+        <div class="stack-row">
+          <span class="stack-tag">PHP</span>
+          <span class="stack-tag">MySQL</span>
+          <span class="stack-tag">JavaScript</span>
+          <span class="stack-tag">Tailwind</span>
+          <span class="stack-tag">Flutter</span>
+          <span class="stack-tag">REST API</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-table">
+      <h3 style="font-family:'Fraunces',serif; color:#fff; font-size:1.15rem; margin:0 0 16px;">Aplikasi mobile</h3>
+      <table>
+        <thead><tr><th>Area</th><th>Fitur</th></tr></thead>
+        <tbody>
+          <tr><td>Masuk &amp; keamanan</td><td>Login ke sistem yang sama dengan web; opsi autentikasi biometrik di perangkat.</td></tr>
+          <tr><td>Beranda</td><td>Profil user, menu produksi, absensi, peta, daftar site aktif, approval, pengaturan.</td></tr>
+          <tr><td>Per site</td><td>Pintu masuk modul: HR, HSE-S, Managerial, Mining Operation, General Affairs.</td></tr>
+          <tr><td>Menu dinamis</td><td>Isi menu mengikuti hak akses user, selaras dengan versi web.</td></tr>
+          <tr><td>Managerial</td><td>Dashboard ringkas dengan grafik produksi &amp; KPI secara native.</td></tr>
+          <tr><td>Administrasi</td><td>Management site, akun, permission, department, audit history, app settings.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <p class="kicker" style="color:var(--teal);">Kontak</p>
+    <h2>Mari berdiskusi soal proyek atau peluang kerja sama</h2>
+    <p>Terbuka untuk peluang sebagai Data Analyst, pengembang sistem internal, atau kolaborasi proyek data &amp; dashboard.</p>
+    <div class="contact-links">
+      <a class="btn btn-primary" href="mailto:brianmangkey@manadokota.cloud">Kirim Email</a>
+      <a class="btn btn-ghost" href="tel:+6281215868072">Telepon: 0812 1586 8072</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  © <span id="year"></span> Bryan C. Mangkey — Kota Manado, Indonesia.
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const departments = [
+    {
+      id: "managerial",
+      label: "Managerial",
+      note: "Perencanaan, anggaran, dan approval tingkat manajemen.",
+      features: ["Material Request Slip","RAB Request","Forecast","Site Project & Plan Settings","Approval Cuti (level manajerial)","Roster Kerja","Attendance Rate"]
+    },
+    {
+      id: "engineering",
+      label: "Engineering",
+      note: "Perencanaan teknis, equipment, dan analisis performa.",
+      features: ["Material Request Slip & RAB Request","Duration Rainfall","Equipment Management","Plan Management","Struktur Organisasi","Waterfall Analysis","MTD (Month to Date)","Safety KPI","Cuti Karyawan, Roster Kerja, Attendance Rate","Coaching & Konseling"]
+    },
+    {
+      id: "mining",
+      label: "Mining Operation",
+      note: "Produksi harian dan indikator operasional lapangan.",
+      features: ["Material Request Slip & RAB Request","Retase Harian","HM (Hour Meter)","Daily Production","Struktur Organisasi & Safety KPI","Cuti Karyawan, Roster Kerja, Attendance Rate","Coaching & Konseling"]
+    },
+    {
+      id: "hse",
+      label: "HSE-S",
+      note: "Kesehatan, keselamatan, lingkungan & keamanan kerja.",
+      features: ["Dashboard HSE-S","Struktur Organisasi","Material Request Slip & RAB Request","Dashboard Medic, Medic, Stok Medic, Out Medic","Auto Order Medic & Opname Medic","Mine Permit","Kesehatan & Commissioning Unit","Safety KPI","Cuti Karyawan, Roster Kerja, Attendance Rate","APD Management","Coaching & Konseling"]
+    },
+    {
+      id: "logistik",
+      label: "Logistik",
+      note: "Fuel, spare part, dan rantai pengadaan.",
+      features: ["Dashboard Fuel","Struktur Organisasi","Cuti, Roster, Attendance Rate, Coaching & Konseling","Dashboard Master Part","Fuel Storage & Fuel Consumption","Populasi Unit","Master Spare Part, Stock, IN/OUT","Cost Unit, Opname, Auto Order","Material Request Slip, Purchase Request, RAB Request","Review RAB, RAB, Review MRS","Safety KPI"]
+    },
+    {
+      id: "hr",
+      label: "HR – GA – TC – FIN",
+      note: "People operations, kontrak, dan administrasi personel.",
+      features: ["Material Request Slip & RAB Request","Personnel Administration","Struktur Organisasi & Dashboard HR","Roster Kerja","Cuti Karyawan","Uang Akomodasi Cuti","Approval (HR)","Monitoring Kontrak karyawan","Sistem Absensi","Coaching & Konseling","Facility Management & Asset Management","Stok HRGA, IN/OUT HRGA","Manajemen Seragam","Safety KPI"]
+    },
+    {
+      id: "plant",
+      label: "Plant",
+      note: "Perawatan unit dan efisiensi armada.",
+      features: ["Dashboard Plant","Struktur Organisasi","Material Request Slip & RAB Request","HM Unit","IDLE Control (fleet)","Plan Service","Safety KPI","Cuti Karyawan, Roster Kerja, Attendance Rate","Coaching & Konseling"]
+    }
+  ];
+
+  const deptList = document.getElementById('deptList');
+  const deptPanel = document.getElementById('deptPanel');
+
+  function renderPanel(dept){
+    deptPanel.innerHTML = `
+      <h3>${dept.label}</h3>
+      <p class="dept-note">${dept.note}</p>
+      <ul class="feat-grid">
+        ${dept.features.map(f => `<li>${f}</li>`).join('')}
+      </ul>
+    `;
+  }
+
+  function renderList(activeId){
+    deptList.innerHTML = departments.map(d => `
+      <button class="dept-btn" role="tab" aria-selected="${d.id === activeId}" data-id="${d.id}">${d.label}</button>
+    `).join('');
+    deptList.querySelectorAll('.dept-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const dept = departments.find(d => d.id === btn.dataset.id);
+        renderList(dept.id);
+        renderPanel(dept);
+      });
+    });
+  }
+
+  renderList(departments[0].id);
+  renderPanel(departments[0]);
+</script>
+
+</body>
+</html>
